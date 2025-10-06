@@ -1,10 +1,16 @@
 {
   "name": "love-machine",
   "private": true,
-  "workspaces": ["apps/*","packages/*"],
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "dev:web": "pnpm --filter web dev",
-    "dev:api": "pnpm --filter api start:dev",
+    "dev:api": "PORT=4000 pnpm --filter api start:dev",
     "dev": "concurrently -k \"pnpm dev:api\" \"pnpm dev:web\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
   }
 }
