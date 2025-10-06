@@ -1,0 +1,10 @@
+{
+  "name": "love-machine",
+  "private": true,
+  "workspaces": ["apps/*","packages/*"],
+  "scripts": {
+    "dev:web": "pnpm --filter web dev",
+    "dev:api": "pnpm --filter api start:dev",
+    "dev": "concurrently -k \"pnpm dev:api\" \"pnpm dev:web\""
+  }
+}
